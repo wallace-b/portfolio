@@ -1,0 +1,50 @@
+body {
+  background: #e8e8e8;
+}
+
+.pred-tool-box {
+  background: white;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 15px;
+  width: 700px;
+  margin: 50px auto;
+  padding: 25px;
+  text-align: center;
+  position: relative;
+}
+
+.pred-tool-title {
+  color: #0097ff;
+}
+
+.pred-tool-instructions {
+  color: darkblue;
+  text-align: left;
+  font-size: 16px;
+}
+
+.pred-tool-form {
+  text-align: left;
+}
+
+.form-label {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.form-description {
+  font-weight:300;
+  font-style: italic;
+}
+
+.pred-button {
+  padding: 15px 15px;
+  border: 0;
+  background: linear-gradient(to right, #48de6d 0%,#0097ff 100%); 
+  border-radius: 5px;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+}

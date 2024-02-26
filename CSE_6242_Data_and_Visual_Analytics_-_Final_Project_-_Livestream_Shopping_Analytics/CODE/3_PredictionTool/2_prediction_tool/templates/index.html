@@ -1,0 +1,39 @@
+{% extends "layout.html" %} {% block body %}
+<div class="pred-tool-box">
+  <h2 class="pred-tool-title">
+    Marketing Campaign Performance Prediction Tool - All Platforms
+  </h2>
+  <h4>
+    This model covers ALL streaming platforms. Random Forest, r^2 = 0.191106
+  </h4>
+  <h4 class="pred-tool-instructions">
+    INSTRUCTIONS: <br />
+    1. Enter the values for the predictor variables below <br />
+    2. Click estimate revenue for a marketing campaign revenue estimate in $USD
+  </h4>
+  <form action="/" method="post" class="pred-tool-form">
+    {% for feature in features%}
+    <label for="{{ feature }}" class="form-label">{{ feature }}:</label>
+    <input type="number" name="{{ feature }}" step="1" required /><br />
+    <p class="form-description">
+      *typical range of {{ feature }} is {{ features_min_max[loop.index0][0] }}
+      to {{ features_min_max[loop.index0][1] }}. Units = {{
+      features_min_max[loop.index0][2] }}
+    </p>
+    <p>
+      <br />
+      {% endfor %}
+
+      <button type="submit" class="pred-button">Estimate Revenue</button>
+    </p>
+  </form>
+
+  {% if prediction_result is not none %}
+  <div>
+    <h4>
+      The estimated revenue of the marketing campaign is ${{ prediction_result
+      }}
+    </h4>
+  </div>
+</div>
+{% endif %} {% endblock %}
